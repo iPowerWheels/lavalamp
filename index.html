@@ -11,12 +11,11 @@
          :where(.wp-block-columns.is-layout-flex){gap: 2em;}
          .wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
     </style>
-    <!-- Etiquetas SEO -->
+
     <meta name="description" content="Simple lava lamp" />
     <meta name="keywords" content="exoplaneto, lava lamp, lámpara de lava, animación, canvas, JavaScript" />
     <link rel="canonical" href="https://exoplaneto.us/" />
 
-    <!-- Datos estructurados JSON-LD -->
     <script type="application/ld+json">
         {
           "@context": "https://schema.org",
@@ -39,12 +38,11 @@
     </style>
     <link rel="stylesheet" id="main-stylesheet-css" href="app.css" type="text/css" media="all" />
     <script data-cfasync="false" data-wpfc-render="false" type="text/javascript" id="exactmetrics-frontend-script-js-extra"></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="/wp-content/uploads/fbrfg/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/wp-content/uploads/fbrfg/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/wp-content/uploads/fbrfg/favicon-16x16.png">
-    <link rel="manifest" href="/wp-content/uploads/fbrfg/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/wp-content/uploads/fbrfg/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="/wp-content/uploads/fbrfg/favicon.ico">
     <meta name="msapplication-TileColor" content="#1b1d20">
     <meta name="msapplication-config" content="/wp-content/uploads/fbrfg/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
@@ -65,29 +63,22 @@
           try {
             if ('wakeLock' in navigator) {
               wakeLock = await navigator.wakeLock.request('screen');
-              console.log('Wake Lock activado.');
+              console.log('Wake Lock activated.');
               document.addEventListener('visibilitychange', async () => {
                 if (document.visibilityState === 'visible' && wakeLock === null) {
                   wakeLock = await navigator.wakeLock.request('screen');
-                  console.log('Wake Lock reactivado.');
+                  console.log('Wake Lock reactivated.');
                 }
               });
             } else {
-              console.warn('Wake Lock API no soportada en este navegador.');
+              console.warn('Wake Lock API not supported in this browser.');
             }
           } catch (err) {
-            console.error(`Error al solicitar el wake lock: ${err.message}`);
+            console.error(`Error requesting wake lock: ${err.message}`);
           }
         }
         document.addEventListener('DOMContentLoaded', () => {
           solicitarWakeLock();
-        });
-    </script>
-
-
-    <script>
-        $(document).ready(function(){
-          $('.top-bar').midnight();
         });
     </script>
 
