@@ -137,8 +137,10 @@
           return new Point(this.x + p.x, this.y + p.y);
         };
         var Ball = function(parent) {
-          var min = 0.4;
-          var max = 1.0;
+          // var min = 0.4;
+          // var max = 1.0;
+          var minFactor = (parent.wh < 500) ? 0.6 : 0.3;
+          var maxFactor = (parent.wh < 500) ? 1.2 : 0.9;
           /* this.vel = new Point(
             (Math.random() > 0.5 ? 1 : -1) * (0.2 + Math.random() * 0.25),
             (Math.random() > 0.5 ? 1 : -1) * (0.2 + Math.random())
@@ -151,7 +153,8 @@
             parent.width * 0.25 + Math.random() * parent.width * 0.6,
             parent.height * 0.25 + Math.random() * parent.height * 0.6
           );
-          this.size = (parent.wh / 15) + (Math.random() * (max - min) + min) * (parent.wh / 15);
+          // this.size = (parent.wh / 15) + (Math.random() * (max - min) + min) * (parent.wh / 15);
+          this.size = (parent.wh / 15) + (Math.random() * (maxFactor - minFactor) + minFactor) * (parent.wh / 15);
           this.width = parent.width;
           this.height = parent.height;
         };
