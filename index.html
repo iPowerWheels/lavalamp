@@ -275,8 +275,8 @@
           ctx.fillStyle = this.metaFill;
           ctx.beginPath();
           i = 0;
-          ctx.shadowBlur = 1;
-          ctx.shadowColor = "#828282";
+          ctx.shadowBlur = 5;
+          ctx.shadowColor = "#c70039";
           while (ball = this.balls[i++]) {
             var next = [
               Math.round(ball.pos.x / this.step),
@@ -286,6 +286,7 @@
               next = this.marchingSquares(next);
             } while (next);
             if (this.paint) {
+              ctx.filter = "blur(2px)";
               ctx.fill();
               ctx.closePath();
               ctx.beginPath();
