@@ -137,11 +137,15 @@
           return new Point(this.x + p.x, this.y + p.y);
         };
         var Ball = function(parent) {
-          var min = .01;
-          var max = 1.5;
-          this.vel = new Point(
+          var min = 0.8; // .01;
+          var max = 1.2; // 1.5;
+          /* this.vel = new Point(
             (Math.random() > 0.5 ? 1 : -1) * (0.2 + Math.random() * 0.25),
             (Math.random() > 0.5 ? 1 : -1) * (0.2 + Math.random())
+          ); */
+          this.vel = new Point(
+              (Math.random() > 0.5 ? 1 : -1) * (0.05 + Math.random() * 0.1),
+              (Math.random() > 0.5 ? 1 : -1) * (0.05 + Math.random() * 0.2)
           );
           this.pos = new Point(
             parent.width * 0.25 + Math.random() * parent.width * 0.6,
@@ -209,7 +213,8 @@
             var i = 0;
             var ball;
             while (ball = this.balls[i++]) {
-              force += ball.size * ball.size /
+              // force += ball.size * ball.size /
+              force += (ball.size * ball.size * 1.5) / 
                 (-2 * cell.x * ball.pos.x - 2 * cell.y * ball.pos.y + ball.pos.magnitude + cell.magnitude);
             }
             force *= this.sign;
@@ -236,7 +241,7 @@
                 idn
               );
             }
-            if (Math.abs(force) > 1) mscase += Math.pow(2, i);
+            if (Math.abs(force) > 0.8) mscase += Math.pow(2, i); // Math.abs(force) > 1
           }
           if (mscase === 15) {
             return [x, y - 1, false];
@@ -300,7 +305,8 @@
             w, h, r
           );
           gradient.addColorStop(0, c0);
-          gradient.addColorStop(1, c1);
+          gradient.addColorStop(1, "rgba(199, 0, 57, 0.6)");
+          // gradient.addColorStop(1, c1);
           return gradient;
         };
 
