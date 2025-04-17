@@ -283,8 +283,11 @@
           ctx.fillStyle = this.metaFill;
           ctx.beginPath();
           i = 0;
-          ctx.shadowBlur = 5;
-          ctx.shadowColor = "#c70039";
+          ctx.globalCompositeOperation = "lighter"; // sumar color
+          ctx.shadowBlur = 20; 
+          ctx.shadowColor = "rgba(255, 0, 255, 0.6)";
+          /* ctx.shadowBlur = 5;
+          ctx.shadowColor = "#c70039"; */
           while (ball = this.balls[i++]) {
             var next = [
               Math.round(ball.pos.x / this.step),
