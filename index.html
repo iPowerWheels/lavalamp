@@ -139,14 +139,14 @@
         var Ball = function(parent) {
           var min = 0.8; // .01;
           var max = 1.2; // 1.5;
-          /* this.vel = new Point(
+          this.vel = new Point(
             (Math.random() > 0.5 ? 1 : -1) * (0.2 + Math.random() * 0.25),
             (Math.random() > 0.5 ? 1 : -1) * (0.2 + Math.random())
-          ); */
+          ); /*
           this.vel = new Point(
               (Math.random() > 0.5 ? 1 : -1) * (0.05 + Math.random() * 0.1),
               (Math.random() > 0.5 ? 1 : -1) * (0.05 + Math.random() * 0.2)
-          );
+          ); */
           this.pos = new Point(
             parent.width * 0.25 + Math.random() * parent.width * 0.6,
             parent.height * 0.25 + Math.random() * parent.height * 0.6
