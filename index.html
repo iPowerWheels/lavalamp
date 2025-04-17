@@ -236,7 +236,7 @@
                 idn
               );
             }
-            if (Math.abs(force) > 0.8) mscase += Math.pow(2, i); // Math.abs(force) > 1
+            if (Math.abs(force) > 1 ) mscase += Math.pow(2, i);
           }
           if (mscase === 15) {
             return [x, y - 1, false];
