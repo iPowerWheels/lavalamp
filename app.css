@@ -2,9 +2,9 @@
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: 100vh;
   overflow: hidden;
-  background: #2e003e; /* fallback si el canvas no carga */
+  background: #2e003e;
 }
 
 .container {
